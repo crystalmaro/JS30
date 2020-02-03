@@ -1,0 +1,46 @@
+:root {
+    /* declaring variables, and setting default values */
+    --padding: 20px;
+    --blur: 0;
+    --base: #ffffff;
+    --corner: 10px;
+}
+
+.image {
+    margin: auto;
+    width: 50%;
+    border-radius: var(--corner);
+}
+
+.image > img {
+    /* -- in pure CSS, $ in SASS */
+    padding: var(--padding);
+    filter: blur(var(--blur)); 
+    background: var(--base);
+    border-radius: var(--corner);
+    width: 100%;
+}
+
+.highlight {
+    color: var(--base);
+}
+
+body {
+    background-color: #282c35;
+    color: #eeffff;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.controls > .item {
+    flex: 50%;
+    box-sizing: border-box;
+}
