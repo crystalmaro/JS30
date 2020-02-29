@@ -1,0 +1,40 @@
+body {
+	/* background-color: olivedrab; */
+}
+
+.inbox {
+	width: 300px;
+	margin: 50px auto;
+	border-radius: 10px;
+	background-color: lightyellow;
+	box-shadow: 3px 3px 10px #888;
+}
+
+.item {
+	display: flex;
+	border-bottom: 2px solid rgba(0, 0, 255, 0.5);
+	align-items: center;
+}
+
+.item:last-child {
+	border-bottom: none;
+}
+
+.item input[type="checkbox"] {
+	margin: 20px;
+	cursor: pointer;
+}
+
+.item input[type="checkbox"]:checked + p {
+	color: red;
+	text-decoration: line-through;
+}
+
+.item p {
+	border-left: 2px solid rgba(255, 0, 0, 0.5);
+	/* flex: 1; */
+	margin: 0;
+	padding: 20px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
