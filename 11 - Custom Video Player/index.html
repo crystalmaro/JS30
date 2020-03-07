@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="player">
+    <video src="652333414.mp4" class="player__video viewer" autoplay></video>
+
+    <div class="player__controls">
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+      <button class="player__button toggle" title="Toggle">►</button>
+      <input type="range" class="player__slider" name="volume" min=0 max='1' step='0.05' value='1'>
+      <input type="range" class="player__slider" name="playbackRate" min='0.5' max='2' step='0.1' value='1'>
+      <button class="player__button" data-skip='-10'>« 10s</button>
+      <button class="player__button" data-skip='25'>25s »</button>
+      <button class="player__fullScreen">Fullscreen</button>
+      
+    </div>
+  </div>
+    
+  <script src="index.js"></script>
+</body>
+</html>
+
