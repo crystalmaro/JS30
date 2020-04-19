@@ -9,40 +9,39 @@
   <div class="words" contenteditable>
   </div>
 
-<script>
-  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  <script>
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-  // create new instance of speech recognition
-  const recognition = new SpeechRecognition();
-  // it'll populate as someone's speaking
-  recognition.interimResults = true;
+    // create new instance of speech recognition
+    const recognition = new SpeechRecognition();
+    // it'll populate as someone's speaking
+    recognition.interimResults = true;
 
-  let p = document.createElement('p');
-  const words = document.querySelector('.words');
-  words.appendChild(p);
+    let p = document.createElement('p');
+    const words = document.querySelector('.words');
+    words.appendChild(p);
 
-  recognition.addEventListener('result', e => {
-    const transcript = Array.from(e.results)
-      .map(result => result[0])
-      .map(result => result.transcript)
-      .join('')
+    recognition.addEventListener('result', e => {
+      const transcript = Array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join('');
 
-    p.textContent = transcript;
-    if (e.results[0].isFinal) {
-      p = document.createElement('p');
-      words.appendChild(p)
-    }
-    if (transcript.includes('weather') && e.results[0].isFinal) {
-      alert('getting the weather')
-      window.open('https://www.google.com/search?q=weather&oq=weather', '_blank')
-    }
-  })
+      p.textContent = transcript;
+      if (e.results[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p)
+      }
 
-  recognition.addEventListener('end', recognition.start)
+      if (transcript.includes('weather') && e.results[0].isFinal) {
+        window.open('https://www.google.com/search?q=weather&oq=weather', '_blank')
+      }
+    })
 
-  recognition.start();
+    recognition.addEventListener('end', recognition.start)
 
-</script>
+    recognition.start();
+  </script>
 
 
   <style>
